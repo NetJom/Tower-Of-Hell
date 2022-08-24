@@ -1,0 +1,194 @@
+local TowerOfHell = Instance.new("ScreenGui")
+local Main = Instance.new("ImageLabel")
+local GameName = Instance.new("TextLabel")
+local Credits = Instance.new("TextLabel")
+local Teleport = Instance.new("TextButton")
+local Line = Instance.new("ImageLabel")
+local Close = Instance.new("TextButton")
+local ServerHop = Instance.new("TextButton")
+
+TowerOfHell.Name = "TowerOfHell"
+TowerOfHell.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+TowerOfHell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = TowerOfHell
+Main.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(0, 576, 0, 211)
+Main.Size = UDim2.new(0, 218, 0, 175)
+Main.Image = "rbxassetid://5554237731"
+Main.ImageColor3 = Color3.fromRGB(13, 13, 13)
+
+GameName.Name = "Game Name"
+GameName.Parent = Main
+GameName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameName.BackgroundTransparency = 1.000
+GameName.BorderSizePixel = 0
+GameName.Position = UDim2.new(0.0412844047, 0, 0, 0)
+GameName.Size = UDim2.new(0, 200, 0, 43)
+GameName.Font = Enum.Font.GothamBold
+GameName.Text = "Tower of Hell"
+GameName.TextColor3 = Color3.fromRGB(255, 255, 255)
+GameName.TextSize = 17.000
+
+Credits.Name = "Credits"
+Credits.Parent = Main
+Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits.BackgroundTransparency = 1.000
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.0412844047, 0, 0.85328871, 0)
+Credits.Size = UDim2.new(0, 200, 0, 25)
+Credits.Font = Enum.Font.GothamBold
+Credits.Text = "By @NetJom"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextSize = 13.000
+
+Teleport.Name = "Teleport"
+Teleport.Parent = Main
+Teleport.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.BackgroundTransparency = 1.000
+Teleport.Position = UDim2.new(0.0412844047, 0, 0.242166996, 0)
+Teleport.Size = UDim2.new(0, 200, 0, 50)
+Teleport.Font = Enum.Font.GothamBold
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.TextSize = 17.000
+
+Line.Name = "Line"
+Line.Parent = Main
+Line.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(0, 0, 0, 41)
+Line.Size = UDim2.new(0, 218, 0, 2)
+Line.Image = "rbxassetid://5554237731"
+Line.ScaleType = Enum.ScaleType.Slice
+
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.839, 0, 0.024, 0)
+Close.Size = UDim2.new(0, 35, 0, 36)
+Close.Font = Enum.Font.GothamBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 0, 46)
+Close.TextSize = 17.000
+
+ServerHop.Name = "Server Hop"
+ServerHop.Parent = Main
+ServerHop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ServerHop.BackgroundTransparency = 1.000
+ServerHop.Position = UDim2.new(0.0412844047, 0, 0.566893935, 0)
+ServerHop.Size = UDim2.new(0, 200, 0, 50)
+ServerHop.Font = Enum.Font.GothamBold
+ServerHop.Text = "Server Hop"
+ServerHop.TextColor3 = Color3.fromRGB(255, 255, 255)
+ServerHop.TextSize = 17.000
+
+-- Scripts:
+
+local function VHQKS_fake_script() -- Credits.Rainbow 
+	local script = Instance.new('LocalScript', Credits)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.1)do
+	 script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+	
+	--Enjoy ;) dont change anything. I didnt script this so i dont know if you can change but its adviced not 2
+end
+coroutine.wrap(VHQKS_fake_script)()
+local function NZVQOWX_fake_script() -- Teleport.Teleporter 
+	local script = Instance.new('LocalScript', Teleport)
+
+	function onButtonClicked()
+		wait(.7)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").tower.sections.finish["FinishGlow"].CFrame
+	end
+	script.Parent.MouseButton1Down:connect(onButtonClicked)
+end
+coroutine.wrap(NZVQOWX_fake_script)()
+local function ISTMK_fake_script() -- Line.Rainbow 
+	local script = Instance.new('LocalScript', Line)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.1)do
+	 script.Parent.ImageColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+	
+	--Enjoy ;) dont change anything. I didnt script this so i dont know if you can change but its adviced not 2
+end
+coroutine.wrap(ISTMK_fake_script)()
+local function LPLDMEO_fake_script() -- Main.Drag 
+	local script = Instance.new('LocalScript', Main)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(LPLDMEO_fake_script)()
+local function IHDKDQ_fake_script() -- Close.Closer 
+	local script = Instance.new('LocalScript', Close)
+
+	function onButtonClicked()
+		script.Parent.Parent.Parent:remove()
+	end
+	script.Parent.MouseButton1Down:connect(onButtonClicked)
+end
+coroutine.wrap(IHDKDQ_fake_script)()
+local function ELNB_fake_script() -- ServerHop.Teleporter 
+	local script = Instance.new('LocalScript', ServerHop)
+
+	function onButtonClicked()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+		end
+	script.Parent.MouseButton1Down:connect(onButtonClicked)
+end
+coroutine.wrap(ELNB_fake_script)()
